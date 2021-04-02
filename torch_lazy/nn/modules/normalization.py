@@ -22,14 +22,18 @@ class LazyLayerNorm(LazyModuleMixin, Module):
 
     Examples
     --------
+    >>> input = torch.randn(20, 5, 10, 10)
+    >>> # With Learnable Parameters
     >>> m = LazyLayerNorm()
+    >>> # Without Learnable Parameters
+    >>> m = LazyLayerNorm(elementwise_affine=False)
     >>> m
-    LazyLayerNorm(eps=1e-05, elementwise_affine=True)
-    >>> x = torch.empty((1, 2, 3))
-    >>> m(x).size()
-    torch.Size([1, 2, 3])
+    LazyLayerNorm(eps=1e-05, elementwise_affine=False)
+    >>> output = m(input)
+    >>> output.size()
+    torch.Size([20, 5, 10, 10])
     >>> m
-    LayerNorm((2, 3), eps=1e-05, elementwise_affine=True)
+    LayerNorm((5, 10, 10), eps=1e-05, elementwise_affine=False)
     """
 
     cls_to_become = LayerNorm
@@ -53,8 +57,8 @@ class LazyLayerNorm(LazyModuleMixin, Module):
         )
 
     def initialize_parameters(self, input) -> None:
+        self.normalized_shape = tuple(input.size()[1:])
         if self.has_uninitialized_params():
             with torch.no_grad():
-                self.normalized_shape = tuple(input.size()[1:])
                 self.weight.materialize(self.normalized_shape)
                 self.bias.materialize(self.normalized_shape)
