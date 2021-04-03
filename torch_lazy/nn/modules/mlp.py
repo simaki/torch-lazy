@@ -1,6 +1,5 @@
 from copy import deepcopy
 
-import torch
 from torch.nn import LazyLinear
 from torch.nn import Linear
 from torch.nn import ReLU
@@ -36,6 +35,8 @@ class MLP(Sequential):
 
     Examples
     --------
+    >>> import torch
+
     >>> x = torch.empty(1, 2)
     >>> m = MLP(2, 3)
     >>> m
@@ -91,6 +92,8 @@ class LazyMLP(LazyModuleMixin, Sequential):
 
     Examples
     --------
+    >>> import torch
+
     >>> m = LazyMLP(3)
     >>> m
     LazyMLP(
