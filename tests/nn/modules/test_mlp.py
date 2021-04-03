@@ -23,3 +23,4 @@ class TestLazyMLP:
         assert isinstance(m[0], Linear)
         assert m[0].weight.size() == torch.Size((32, 5))
         assert m[0].bias.size() == torch.Size((32, ))
+        
