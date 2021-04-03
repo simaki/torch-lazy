@@ -14,3 +14,4 @@ class TestLazyLayerNorm:
 
         assert isinstance(m, LayerNorm)
         assert m.normalized_shape == (2, 3)
+       
