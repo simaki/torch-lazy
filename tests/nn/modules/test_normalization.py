@@ -6,7 +6,7 @@ from torch.nn import BatchNorm2d
 from torch.nn import BatchNorm3d
 from torch.nn.parameter import UninitializedParameter
 
-from torch_lazy.nn import LazyLayerNorm
+
 from torch_lazy.nn import LazyBatchNorm
 
 
@@ -39,6 +39,7 @@ class TestLazyBatchNorm:
         assert isinstance(m, BatchNorm3d)
         assert not isinstance(m, LazyBatchNorm)
         assert m.weight.size() == torch.Size((100,))
+
 
 class TestLazyLayerNorm:
     def test_layer_norm(self):
