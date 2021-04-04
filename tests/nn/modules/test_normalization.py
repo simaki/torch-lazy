@@ -6,7 +6,7 @@ from torch.nn import BatchNorm2d
 from torch.nn import BatchNorm3d
 from torch.nn.parameter import UninitializedParameter
 
-
+from torch_lazy.nn import LazyLayerNorm
 from torch_lazy.nn import LazyBatchNorm
 
 
