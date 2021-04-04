@@ -1,5 +1,4 @@
 import pytest
-
 import torch
 from torch.nn import LazyLinear
 from torch.nn import Linear
@@ -22,5 +21,4 @@ class TestLazyMLP:
         assert isinstance(m, MLP)
         assert isinstance(m[0], Linear)
         assert m[0].weight.size() == torch.Size((32, 5))
-        assert m[0].bias.size() == torch.Size((32, ))
-        
+        assert m[0].bias.size() == torch.Size((32,))
