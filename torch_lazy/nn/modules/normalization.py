@@ -4,7 +4,6 @@ from torch.nn import LayerNorm
 from torch.nn import BatchNorm1d
 from torch.nn import BatchNorm2d
 from torch.nn import BatchNorm3d
-from torch.nn import Module
 from torch.nn.modules.lazy import LazyModuleMixin
 from torch.nn.parameter import UninitializedParameter
 from torch.nn.parameter import UninitializedBuffer
