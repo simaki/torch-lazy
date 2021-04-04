@@ -1,6 +1,5 @@
 import torch
 from torch.nn import LayerNorm
-from torch.nn import Module
 from torch.nn.modules.lazy import LazyModuleMixin
 from torch.nn.parameter import UninitializedParameter
 

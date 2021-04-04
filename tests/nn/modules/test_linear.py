@@ -1,4 +1,3 @@
-import pytest
 import torch
 from torch.nn import Bilinear
 from torch.nn.parameter import UninitializedParameter

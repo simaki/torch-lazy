@@ -1,4 +1,3 @@
-import pytest
 import torch
 from torch.nn import LayerNorm
 
