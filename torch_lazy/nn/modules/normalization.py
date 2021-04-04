@@ -1,12 +1,12 @@
 import torch
-from torch.nn.modules.batchnorm import _BatchNorm
-from torch.nn import LayerNorm
 from torch.nn import BatchNorm1d
 from torch.nn import BatchNorm2d
 from torch.nn import BatchNorm3d
+from torch.nn import LayerNorm
+from torch.nn.modules.batchnorm import _BatchNorm
 from torch.nn.modules.lazy import LazyModuleMixin
-from torch.nn.parameter import UninitializedParameter
 from torch.nn.parameter import UninitializedBuffer
+from torch.nn.parameter import UninitializedParameter
 
 
 class LazyBatchNorm(LazyModuleMixin, _BatchNorm):

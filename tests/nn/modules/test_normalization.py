@@ -1,12 +1,12 @@
 import torch
-from torch.nn import LayerNorm
 from torch.nn import BatchNorm1d
 from torch.nn import BatchNorm2d
 from torch.nn import BatchNorm3d
+from torch.nn import LayerNorm
 from torch.nn.parameter import UninitializedParameter
 
-from torch_lazy.nn import LazyLayerNorm
 from torch_lazy.nn import LazyBatchNorm
+from torch_lazy.nn import LazyLayerNorm
 
 
 class TestLazyBatchNorm:
