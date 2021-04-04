@@ -41,6 +41,7 @@ jobs:
         python3 -m pip install --upgrade pip
         python3 -m pip install .
         python3 -m pip install pytest pytest-cov codecov
+        pip install --pre torch -f https://download.pytorch.org/whl/nightly/cpu/torch_nightly.html
 
     - name: Run doctest
       run: |
