@@ -42,6 +42,7 @@ m
 # )
 
 input = torch.empty(1, 2)
+output = m(input)
 m
 # MLP(
 #     (0): Linear(in_features=2, out_features=32, bias=True)
@@ -59,11 +60,10 @@ A [`torch.nn.BatchNorm[1-3]d`](https://pytorch.org/docs/stable/nn.html#normaliza
 ```python
 m = LazyBatchNorm()
 m
-LazyBatchNorm(0, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+# LazyBatchNorm(0, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
 
 input = torch.randn(20, 100, 35, 45)
 output = m(input)
-
 m
 # BatchNorm2d(100, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
 ```
@@ -79,7 +79,6 @@ m
 
 input = torch.randn(20, 5, 10, 10)
 output = m(input)
-
 m
 # LayerNorm((5, 10, 10), eps=1e-05, elementwise_affine=True)
 ```
