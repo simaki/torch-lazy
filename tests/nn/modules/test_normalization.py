@@ -10,7 +10,6 @@ from torch_lazy.nn import LazyLayerNorm
 
 
 class TestLazyBatchNorm:
-
     def test_batch_norm(self):
         m = LazyBatchNorm()
         assert isinstance(m, LazyBatchNorm)
